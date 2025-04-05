@@ -13,6 +13,7 @@ import { defaultNavElement } from "@/constants";
 import { handleDelete, handleKeyDown } from "@/lib/key-events";
 
 
+
 export default function Page() {
 
   const undo = useUndo();
@@ -25,6 +26,7 @@ export default function Page() {
   const selectedShapeRef = useRef<string | null>(null);
   const activeObjectRef = useRef<fabric.Object | null>(null);
   const canvasObjects = useStorage((root)=>root.canvasObjects);
+  
 
   const syncShapeInStorage = useMutation(({storage}, object)  => {
     if(!object) return;
@@ -78,6 +80,8 @@ export default function Page() {
           handleDelete(fabricRef.current as any , deleteShapeFromStorage)
           setActiveElement(defaultNavElement)
         break;
+      
+
       default:
         selectedShapeRef.current = elem?.value as string
         break;
@@ -162,9 +166,10 @@ export default function Page() {
       <Navbar 
         activeElement={activeElement}
         handleActiveElement={handleActiveElement}
+
       />
       <section className="flex h-full flex-row">
-        <LeftSideBar  />
+        <LeftSideBar allShapes={ canvasObjects ? Array.from(canvasObjects) : []} />
         <Live canvasRef={canvasRef}/>
         <RightSideBar />
       </section>
