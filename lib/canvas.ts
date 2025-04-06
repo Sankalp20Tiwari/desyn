@@ -340,6 +340,10 @@ export const renderCanvas = ({
   canvasObjects,
   activeObjectRef,
 }: RenderCanvas) => {
+  
+  if (!canvasObjects || typeof canvasObjects.entries !== 'function') {
+    return; // Do nothing if canvasObjects is not ready or not iterable
+  }
   // clear canvas
   fabricRef.current?.clear();
 
