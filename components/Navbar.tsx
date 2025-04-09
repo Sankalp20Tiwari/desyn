@@ -18,7 +18,18 @@ const Navbar = ({ activeElement, imageInputRef, handleImageUpload, handleActiveE
 
   return (
     <nav className="flex select-none items-center justify-between gap-4 bg-primary-black px-5 text-white">
-      <Image src="/assets/logo.svg" alt="FigPro Logo" width={58} height={20} />
+      <div className="flex items-center justify-center m-1">
+        <Image 
+              src="/logo.png" 
+              alt="FigPro Logo" 
+              width={58} 
+              height={18}
+              className="object-contain w-12 h-12" 
+        />
+        <h1 className="ml-2 text-2xl font-bold">
+          Desyn
+        </h1>
+      </div>
 
       <ul className="flex flex-row">
         {navElements.map((item: ActiveElement | any) => (
