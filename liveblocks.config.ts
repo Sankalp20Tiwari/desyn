@@ -1,14 +1,16 @@
 // Define Liveblocks types for your application
 
 import { LiveMap } from "@liveblocks/client";
+import { ReactionEvent } from "./types/type";
 
 // https://liveblocks.io/docs/api-reference/liveblocks-react#Typing-your-data
 declare global {
   interface Liveblocks {
     // Each user's Presence, for useMyPresence, useOthers, etc.
-    Presence: {
+     Presence: {
       // Example, real-time cursor coordinates
-      // cursor: { x: number; y: number };
+      cursor: { x: number; y: number } | null;
+      message: string | null
     };
 
     // The Storage tree for the room, for useMutation, useStorage, etc.
@@ -29,7 +31,7 @@ declare global {
     };
 
     // Custom events, for useBroadcastEvent, useEventListener
-    RoomEvent: {};
+    RoomEvent: ReactionEvent;
       // Example has two events, using a union
       // | { type: "PLAY" } 
       // | { type: "REACTION"; emoji: "🔥" };
