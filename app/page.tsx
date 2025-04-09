@@ -167,7 +167,7 @@ export default function Page() {
     })
 
     window.addEventListener("resize",()=>{
-      handleResize({fabricRef})
+      handleResize({canvas:fabricRef.current})
     })
 
     window.addEventListener("keydown",(e)=>{
@@ -215,7 +215,7 @@ export default function Page() {
       />
       <section className="flex h-full flex-row">
         <LeftSideBar allShapes={ canvasObjects ? Array.from(canvasObjects) : []} />
-        <Live canvasRef={canvasRef}/>
+        <Live canvasRef={canvasRef} undo={undo} redo={redo}/>
         <RightSideBar 
           elementAttributes={elementAttributes}
           setElementAttributes={setElementAttributes}
