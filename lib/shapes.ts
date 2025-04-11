@@ -105,7 +105,7 @@ export const handleImageUpload = ({
 
       canvas.current.add(img);
 
-      // @ts-expect-error
+      // @ts-expect-error objectId is a custom property added to the image
       img.objectId = uuidv4();
 
       shapeRef.current = img;

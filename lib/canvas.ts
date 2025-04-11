@@ -288,26 +288,26 @@ export const handleCanvasSelectionCreated = ({
   // if only one element is selected, set element attributes
   if (selectedElement && options.selected.length === 1) {
     // calculate scaled dimensions of the object
-    const scaledWidth = selectedElement?.scaleX
-      ? selectedElement?.width! * selectedElement?.scaleX
-      : selectedElement?.width;
+    const scaledWidth = selectedElement?.scaleX && selectedElement?.width
+    ? selectedElement.width * selectedElement.scaleX
+    : selectedElement?.width;
 
-    const scaledHeight = selectedElement?.scaleY
-      ? selectedElement?.height! * selectedElement?.scaleY
-      : selectedElement?.height;
+  const scaledHeight = selectedElement?.scaleY && selectedElement?.height
+    ? selectedElement.height * selectedElement.scaleY
+    : selectedElement?.height;
 
-    setElementAttributes({
-      width: scaledWidth?.toFixed(0).toString() || "",
-      height: scaledHeight?.toFixed(0).toString() || "",
-      fill: selectedElement?.fill?.toString() || "",
-      stroke: selectedElement?.stroke || "",
-      // @ts-expect-error
-      fontSize: selectedElement?.fontSize || "",
-      // @ts-expect-error
-      fontFamily: selectedElement?.fontFamily || "",
-      // @ts-expect-error
-      fontWeight: selectedElement?.fontWeight || "",
-    });
+  setElementAttributes({
+    width: scaledWidth?.toFixed(0).toString() || "",
+    height: scaledHeight?.toFixed(0).toString() || "",
+    fill: selectedElement?.fill?.toString() || "",
+    stroke: selectedElement?.stroke || "",
+    // @ts-expect-error fabric.Text may have these props
+    fontSize: selectedElement?.fontSize || "",
+    // @ts-expect-error fabric.Text may have these props
+    fontFamily: selectedElement?.fontFamily || "",
+    // @ts-expect-error fabric.Text may have these props
+    fontWeight: selectedElement?.fontWeight || "",
+  });
   }
 };
 

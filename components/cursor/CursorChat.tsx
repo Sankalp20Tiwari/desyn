@@ -20,7 +20,7 @@ const CursorChat = ({cursor, cursorState, setCursorState, updateMyPresence}: Cur
     if(e.key === 'Enter') {
         setCursorState({
             mode: CursorMode.Chat,
-            //@ts-expect-error
+            //@ts-expect-error message is a custom field in cursorState
             previousMessage: cursorState.message,
             message: ''
         })
