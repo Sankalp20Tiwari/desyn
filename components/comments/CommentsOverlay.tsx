@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useRef } from "react";
-import { useUser, useEditThreadMetadata } from "@liveblocks/react";
+import {  useEditThreadMetadata } from "@liveblocks/react";
 import { useThreads } from "@liveblocks/react/suspense";
 import { useMaxZIndex } from "@/lib/useMaxZIndex";
 import { PinnedThread } from "./PinnedThread";
@@ -23,7 +23,7 @@ type OverlayThreadProps = {
 export const CommentsOverlay = () => {
   const { threads } = useThreads();
   const maxZIndex = useMaxZIndex();
-  const editThreadMetadata = useEditThreadMetadata();
+ 
 
   return (
     <div>

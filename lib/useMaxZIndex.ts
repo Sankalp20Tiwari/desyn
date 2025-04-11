@@ -9,9 +9,9 @@ export const useMaxZIndex = () => {
   return useMemo(() => {
     let max = 0;
     for (const thread of threads) {
-      // @ts-ignore
+      // @ts-expect-error
       if (thread.metadata.zIndex > max) {
-        // @ts-ignore
+        // @ts-expect-error
         max = thread.metadata.zIndex;
       }
     }
