@@ -319,13 +319,14 @@ export const handleCanvasObjectScaling = ({
   const selectedElement = options.target;
 
   // calculate scaled dimensions of the object
-  const scaledWidth = selectedElement?.scaleX
-    ? selectedElement?.width! * selectedElement?.scaleX
-    : selectedElement?.width;
-
-  const scaledHeight = selectedElement?.scaleY
-    ? selectedElement?.height! * selectedElement?.scaleY
-    : selectedElement?.height;
+  const width = selectedElement?.width ?? 0;
+  const height = selectedElement?.height ?? 0;
+  const scaleX = selectedElement?.scaleX ?? 1;
+  const scaleY = selectedElement?.scaleY ?? 1;
+  
+  const scaledWidth = width * scaleX;
+  const scaledHeight = height * scaleY;
+  
 
   setElementAttributes((prev) => ({
     ...prev,
