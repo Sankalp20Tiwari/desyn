@@ -38,7 +38,7 @@ const ShapesMenu = ({
                 handleActiveElement(elem);
               }}
               className={`flex h-fit justify-between gap-10 rounded-none px-5 py-3 focus:border-none ${
-                activeElement.value === elem?.value ? "bg-primary-green" : "hover:bg-primary-grey-200"
+                activeElement.value === elem?.value ? "bg-gray-400" : "hover:bg-primary-grey-200"
               }`}
             >
               <div className="group flex items-center gap-2">
