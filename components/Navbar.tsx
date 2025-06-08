@@ -39,7 +39,7 @@ const Navbar = ({ activeElement, imageInputRef, handleImageUpload, handleActiveE
               if (Array.isArray(item.value)) return;
               handleActiveElement(item);
             }}
-            className={`group px-2 py-2 flex justify-center items-center border-r border-primary-grey-200
+            className={`group px-2 py-2 flex justify-center items-center border-r border-white/20 
             ${isActive(item.value) ? "bg-gray-400" : "hover:bg-primary-grey-200"}
             `}
           >
@@ -55,7 +55,7 @@ const Navbar = ({ activeElement, imageInputRef, handleImageUpload, handleActiveE
             ) : item?.value === "comments" ? (
               // If value is comments, trigger the NewThread component
               <NewThread>
-                <Button className="relative w-5 h-5 object-contain">
+                <Button className="relative w-5 h-5 object-contain bg-transparent hover:bg-transparent">
                   <Image
                     src={item.icon}
                     alt={item.name}
@@ -65,7 +65,7 @@ const Navbar = ({ activeElement, imageInputRef, handleImageUpload, handleActiveE
                 </Button>
               </NewThread>
             ) : (
-              <Button className="relative w-5 h-5 object-contain">
+              <Button className="relative w-5 h-5 object-contain bg-transparent hover:bg-transparent">
                 <Image
                   src={item.icon}
                   alt={item.name}
