@@ -20,7 +20,7 @@ const ShapesMenu = ({
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild className="no-ring">
-          <Button className="relative h-5 w-5 object-contain" onClick={() => handleActiveElement(item)}>
+          <Button className="relative h-5 w-5 object-contain bg-transparent" onClick={() => handleActiveElement(item)}>
             <Image
               src={isDropdownElem ? activeElement.icon : item.icon}
               alt={item.name}
@@ -30,14 +30,14 @@ const ShapesMenu = ({
           </Button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent className="mt-5 flex flex-col gap-y-1 border-none bg-primary-black py-4 text-white">
+        <DropdownMenuContent className="mt-5 flex flex-col gap-y-1 border-none bg-black py-4 text-white">
           {item.value.map((elem) => (
             <Button
               key={elem?.name}
               onClick={() => {
                 handleActiveElement(elem);
               }}
-              className={`flex h-fit justify-between gap-10 rounded-none px-5 py-3 focus:border-none ${
+              className={`flex h-fit justify-between gap-10 rounded-none px-5 py-3 focus:border-none bg-black ${
                 activeElement.value === elem?.value ? "bg-gray-400" : "hover:bg-primary-grey-200"
               }`}
             >
