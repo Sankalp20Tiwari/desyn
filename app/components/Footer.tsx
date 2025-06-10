@@ -87,7 +87,7 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <p className="text-muted-foreground">© 2024 Desyn. All rights reserved.</p>
+              <p className="text-muted-foreground">© {new Date().getFullYear()} Desyn. All rights reserved.</p>
               <p className="text-muted-foreground mt-4 md:mt-0">Built with ❤️ for designers</p>
             </motion.div>
           </div>
