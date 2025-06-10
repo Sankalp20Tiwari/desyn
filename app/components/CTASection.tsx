@@ -139,7 +139,7 @@ const CTASection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           The future of collaborative design is here. Create, prototype, and ship faster than ever 
-          with <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text font-medium">Desyn</span>'s 
+          with <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text font-medium">Desyn</span>&apos;s 
           powerful design system.
         </motion.p>
 
