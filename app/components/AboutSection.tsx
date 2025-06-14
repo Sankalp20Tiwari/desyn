@@ -181,6 +181,8 @@ const AboutSection: React.FC = () => {
           linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #312e81 50%, #1e1b4b 75%, #0f172a 100%)
         `
       }}
+      id='about'
+
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
