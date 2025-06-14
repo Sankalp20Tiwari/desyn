@@ -17,6 +17,21 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname:'liveblocks.io',
         port: '',
+      },
+      {
+        protocol: 'https',
+        hostname:'images.unsplash.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.simpleicons.org',
+        port: '',
       }
     ]
   },
