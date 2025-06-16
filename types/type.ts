@@ -1,5 +1,6 @@
 import { BaseUserMeta, User } from "@liveblocks/client";
 import { Gradient, Pattern } from "fabric/fabric-impl";
+import { LucideIcon } from "lucide-react";
 
 export enum CursorMode {
   Hidden,
@@ -185,3 +186,48 @@ export type CursorChatProps = {
     }>
   ) => void;
 };
+
+
+export interface StatItem {
+  number: string;
+  label: string;
+  icon: LucideIcon;
+  color: string;
+  delay: number;
+}
+
+
+export interface ValueItem {
+  image: string;
+  title: string;
+  description: string;
+  color: string;
+  borderColor: string;
+  iconColor: string;
+  delay: number;
+}
+
+export interface FeatureItem {
+  icon: LucideIcon;
+  text: string;
+}
+
+
+
+export interface FloatingOrbStyle {
+  left: string;
+  top: string;
+  background: string;
+  animationDelay: string;
+  animationDuration: string;
+}
+
+
+export interface MousePosition {
+  x: number;
+  y: number;
+}
+
+export interface VisibilityState {
+  [key: string]: boolean;
+}
