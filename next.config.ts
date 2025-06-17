@@ -30,7 +30,22 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'cdn.simpleicons.org',
+        hostname: 'simpleicons.org',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.icons8.com',
+        port: '',
+      },
+            {
+        protocol: 'https',
+        hostname: 'linear.app',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.jsdelivr.net',
         port: '',
       }
     ]
