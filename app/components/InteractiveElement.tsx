@@ -1,18 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { motion } from 'framer-motion';
-
-interface InteractiveElementProps {
-  icon: React.ComponentType<{ className?: string }>;
-  className: string;
-  dragConstraints: {
-    left: number;
-    right: number;
-    top: number;
-    bottom: number;
-  };
-}
-
+import { InteractiveElementProps } from '@/types/type';
 
 const InteractiveElement: React.FC<InteractiveElementProps> = ({ icon: Icon, className, dragConstraints }) => {
   const [isDragging, setIsDragging] = useState(false);
