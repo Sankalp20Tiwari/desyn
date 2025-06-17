@@ -231,3 +231,66 @@ export interface MousePosition {
 export interface VisibilityState {
   [key: string]: boolean;
 }
+
+
+export interface InteractiveElementProps {
+  icon: React.ComponentType<{ className?: string }>;
+  className: string;
+  dragConstraints: {
+    left: number;
+    right: number;
+    top: number;
+    bottom: number;
+  };
+}
+
+export interface AvatarType {
+  initials: string;
+  bgColor: string;
+  textColor: string;
+}
+
+export interface Stats {
+  projects: string;
+  rating: number;
+  team: string;
+}
+
+export interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  avatar: AvatarType;
+  gradient: string;
+  accentColor: string;
+  stats: Stats;
+  companyLogo?: string;
+}
+
+export interface Particle {
+  id: number;
+  x: number;
+  y: number;
+  duration: number;
+  delay: number;
+}
+
+export interface CompanyLogo {
+  name: string;
+}
+
+export interface TestimonialStatItem {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: string;
+  color: string;
+}
+
+export interface FloatingShapeProps {
+  children: React.ReactNode;
+  className: string;
+  delay?: number;
+  duration?: number;
+}
