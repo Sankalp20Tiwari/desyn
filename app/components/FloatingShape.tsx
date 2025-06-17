@@ -1,12 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion';
+import { FloatingShapeProps } from '@/types/type';
 
-interface FloatingShapeProps {
-  children: React.ReactNode;
-  className: string;
-  delay?: number;
-  duration?: number;
-}
+
 
 const FloatingShape: React.FC<FloatingShapeProps> = ({ children, className, delay = 0, duration = 8 }) => (
   <motion.div
