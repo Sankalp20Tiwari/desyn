@@ -1,7 +1,9 @@
-import { Home, Info, Layers, Mail, Menu, X } from 'lucide-react';
+import {  Menu, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
+import { navItems } from '@/data/navbar';
 
 const ModernNavbar:React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,12 +17,6 @@ const ModernNavbar:React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Home', icon: Home, href: '#' },
-    { name: 'Features', icon: Layers, href: '#features' },
-    { name: 'About', icon: Info, href: '#about' },
-    { name: 'Contact', icon: Mail, href: '/contact' },
-  ];
 
   return (
     <motion.nav
@@ -42,11 +38,15 @@ const ModernNavbar:React.FC = () => {
             transition={{ type: "spring", stiffness: 400 }}
           >
             <motion.div
-              className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center"
-              animate={{ rotate: [0, 360] }}
+              className="w-10 h-10  rounded-xl flex items-center justify-center"
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
-              <Layers className="w-5 h-5 text-white" />
+              <Image
+               src={"/logo.png"}
+                alt="Logo"
+                width={32}
+                height={32}
+              />
             </motion.div>
             <span className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
               Desyn
