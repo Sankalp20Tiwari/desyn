@@ -4,66 +4,15 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Crown, Zap, Infinity, Check } from 'lucide-react';
+import { Crown, Check } from 'lucide-react';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { pricingPlans } from '@/data/pricing';
 
 const PricingSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  const pricingPlans = [
-    {
-      name: "Starter",
-      price: "Free",
-      period: "forever",
-      description: "Perfect for individuals and small teams getting started",
-      features: [
-        "Up to 3 projects",
-        "Real-time collaboration",
-        "Basic drawing tools",
-        "Comment system",
-        "Export to PNG/SVG"
-      ],
-      color: "from-blue-500 to-cyan-500",
-      popular: false,
-      icon: Zap
-    },
-    {
-      name: "Pro",
-      price: "$12",
-      period: "/month",
-      description: "For growing teams who need advanced features",
-      features: [
-        "Unlimited projects",
-        "Advanced drawing tools",
-        "Video chat integration",
-        "Version history",
-        "Premium templates",
-        "Priority support"
-      ],
-      color: "from-purple-500 to-pink-500",
-      popular: true,
-      icon: Crown
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "pricing",
-      description: "For large organizations with custom needs",
-      features: [
-        "Everything in Pro",
-        "SSO integration",
-        "Advanced security",
-        "Custom integrations",
-        "Dedicated support",
-        "SLA guarantee"
-      ],
-      color: "from-orange-500 to-red-500",
-      popular: false,
-      icon: Infinity
-    }
-  ];
 
   return (
     <section ref={ref} id="pricing" className="relative z-10 section-padding">
