@@ -279,6 +279,7 @@ export interface Particle {
 
 export interface CompanyLogo {
   name: string;
+  logoSrc: string;
 }
 
 export interface TestimonialStatItem {
