@@ -1,54 +1,10 @@
-import React, { useRef, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useRef,useMemo } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Star, Quote, Sparkles, Award, Users, TrendingUp, ExternalLink } from 'lucide-react';
+import {  AvatarType, CompanyLogo, Testimonial, TestimonialStatItem } from '@/types/type';
+import Image from 'next/image';
 
-// TypeScript interfaces
-interface Avatar {
-  initials: string;
-  bgColor: string;
-  textColor: string;
-}
-
-interface Stats {
-  projects: string;
-  rating: number;
-  team: string;
-}
-
-interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  company: string;
-  content: string;
-  avatar: Avatar;
-  gradient: string;
-  accentColor: string;
-  stats: Stats;
-  companyLogo?: string;
-}
-
-interface Particle {
-  id: number;
-  x: number;
-  y: number;
-  duration: number;
-  delay: number;
-}
-
-interface CompanyLogo {
-  name: string;
-}
-
-interface StatItem {
-  icon: React.ComponentType<{ className?: string }>;
-  label: string;
-  value: string;
-  color: string;
-}
-
-// Optimized Avatar Component with better visual design
-const Avatar = React.memo<{ avatar: Avatar; name: string; gradient: string; size?: 'sm' | 'md' | 'lg' }>(({ 
+const Avatar = React.memo<{ avatar: AvatarType; name: string; gradient: string; size?: 'sm' | 'md' | 'lg' }>(({ 
   avatar, 
   name, 
   gradient, 
@@ -80,12 +36,12 @@ Avatar.displayName = 'Avatar';
 // Company Logos with better animations
 const CompanyLogos = React.memo<{ isInView: boolean }>(({ isInView }) => {
   const companyLogos = useMemo<CompanyLogo[]>(() => [
-    { name: "Stripe" },
-    { name: "Airbnb" },
-    { name: "Notion" },
-    { name: "Figma" },
-    { name: "Linear" },
-    { name: "Vercel" }
+    { name: "Stripe" , logoSrc: 'https://img.icons8.com/?size=100&id=MxXzhMjVo0R4&format=png&color=000000'},
+    { name: "Airbnb" ,logoSrc: 'https://img.icons8.com/?size=100&id=6ZOTxz7GcLoP&format=png&color=000000' },
+    { name: "Notion" ,logoSrc:'https://img.icons8.com/?size=100&id=wue74HqaylSJ&format=png&color=000000'},
+    { name: "Figma" ,logoSrc:'https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000'},
+    { name: "Linear",logoSrc:'https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/82d07241-84b3-4cdf-33b5-a09b8d169300/f=auto,dpr=2,q=95,fit=scale-down,metadata=none'},
+    { name: "Vercel" ,logoSrc:'https://simpleicons.org/icons/vercel.svg'},
   ], []);
 
   return (
@@ -102,8 +58,15 @@ const CompanyLogos = React.memo<{ isInView: boolean }>(({ isInView }) => {
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
           whileHover={{ scale: 1.05, opacity: 0.9 }}
-          className="px-4 py-2 text-white/50 font-medium text-sm sm:text-base hover:text-white/70 transition-colors duration-200"
+          className="px-4 py-2 text-white/50 font-medium text-sm sm:text-base hover:text-white/70 transition-colors duration-200 flex flex-co items-center justify-center gap-2"
         >
+          <Image
+           src={company.logoSrc}
+            alt={company.name}
+            width={100}
+            height={100}  
+            className={`w-6 h-6 sm:w-8 sm:h-8 ${company.name === 'Vercel' ? 'invert': ''}`}
+          />
           {company.name}
         </motion.div>
       ))}
@@ -115,7 +78,7 @@ CompanyLogos.displayName = 'CompanyLogos';
 
 // Enhanced Stats Section
 const StatsSection = React.memo<{ isInView: boolean }>(({ isInView }) => {
-  const stats = useMemo<StatItem[]>(() => [
+  const stats = useMemo<TestimonialStatItem[]>(() => [
     { icon: Users, label: "Active Users", value: "100k+", color: "purple" },
     { icon: Award, label: "5-Star Reviews", value: "50k+", color: "pink" },
     { icon: TrendingUp, label: "Projects Created", value: "2M+", color: "cyan" }
