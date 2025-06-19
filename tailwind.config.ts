@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+		"./data/**/*.{ts,tsx}",
 	],
 	prefix: "",
 	theme: {
@@ -18,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily:{
+				comic: ['var(--font-comic-neue)', 'cursive'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
