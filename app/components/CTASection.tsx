@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Zap, Users } from 'lucide-react';
 import Link from 'next/link';
+import { moogalatorFont } from '@/fonts/fontsExport';
 
 const CTASection = () => {
   const floatingElements = [
@@ -20,7 +21,7 @@ const CTASection = () => {
       transition={{ duration: 1 }}
     >
       {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-pink-500/10" />
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -32,7 +33,7 @@ const CTASection = () => {
         </svg>
       </div>
 
-      {/* Floating Design Elements */}
+      {/* Floating Design Elements
       {floatingElements.map((element, index) => (
 <motion.div
   key={index}
@@ -73,7 +74,7 @@ const CTASection = () => {
     <element.icon className="w-8 h-8 text-purple-300" />
   </div>
 </motion.div>
-      ))}
+      ))} */}
 
       {/* Glowing Orbs */}
       <motion.div
@@ -104,29 +105,32 @@ const CTASection = () => {
       <div className="max-w-6xl mx-auto text-center relative">
         {/* Pre-headline */}
         <motion.div
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 border-2  border-purple-500 mb-8 shadow-md"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Sparkles className="w-4 h-4 text-purple-400" />
-          <span className="text-sm font-medium text-purple-300">Join 50,000+ designers</span>
+          ✨
+          <span className="font-bold text-white">Join 50,000+ designers</span>
         </motion.div>
 
         {/* Main Headline */}
         <motion.h2
-          className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-none"
+          className="text-4xl md:text-7xl lg:text-8xl font-bold mb-8 leading-none"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-            Design
+          <span className={`block p-4  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}>
+            Imagine
           </span>
-          <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent mt-4">
-            without limits
+          <span className={`block p-4 text-white mt-4 ${moogalatorFont.className}`}>
+            create 
+          </span>
+          <span className={`block p-4  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent mt-4 ${moogalatorFont.className}`}>
+            Inspire
           </span>
         </motion.h2>
 
