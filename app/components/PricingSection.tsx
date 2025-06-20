@@ -8,6 +8,7 @@ import { Crown, Check } from 'lucide-react';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { pricingPlans } from '@/data/pricing';
+import { moogalatorFont } from '@/fonts/fontsExport';
 
 const PricingSection = () => {
   const ref = useRef(null);
@@ -26,21 +27,41 @@ const PricingSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-16 px-4 md:px-0"
+          className="mb-16 px-4 md:px-0 "
         >
-          <Badge className="mb-6 bg-gradient-to-br from-purple-500 to-pink-500 text-white border-white/20 h-8">
-            <Crown className="w-4 h-4 mr-2" />
+          <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 border-2  border-purple-500 mb-8 shadow-md'>
+            <Crown className="w-4 h-4 mr-2 fill-yellow-500 text-yellow-500" />
             Simple Pricing
-          </Badge>
+          </div>
           
           <motion.h2 
-            className="text-6xl p-2 md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent"
+            className={`text-4xl p-2 leading-tight md:text-7xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Choose your plan
+            Choose
+            
           </motion.h2>
+          <motion.h2 
+            className={`text-4xl p-2 leading-tight md:text-7xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Your
+            
+          </motion.h2>
+
+          <motion.h2 
+            className={`text-5xl p-2 md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <span  className={`text-5xl p-2  md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-200 via-teal-600 to-teal-200 bg-clip-text text-transparent ${moogalatorFont.className}`}> plan </span>
+          </motion.h2>
+          
           
           <motion.p 
             className="text-xl text-muted-foreground mb-16 max-w-3xl mx-auto"
@@ -66,7 +87,7 @@ const PricingSection = () => {
               >
                 {plan.popular && (
                   <motion.div 
-                    className="absolute -top-4 md:left-[150px] left-[110px] z-10"
+                    className="absolute -top-4 md:left-[150px] left-[50px] z-10"
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 2 } : {}}
                     transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
