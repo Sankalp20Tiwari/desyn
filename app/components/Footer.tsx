@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { Globe, Palette, Shield } from 'lucide-react';
 import Image from 'next/image';
+import { moogalatorFont } from '@/fonts/fontsExport';
 
 const Footer = () => {
   return (
@@ -34,7 +35,7 @@ const Footer = () => {
                       className="object-contain" 
                     />
                   </motion.div>
-                  <span className="text-2xl font-bold text-white">Desyn</span>
+                  <span className={`text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent ${moogalatorFont.className}`}>Desyn</span>
                 </div>
                 <p className="text-muted-foreground mb-6">
                   The next-generation collaborative design platform for modern creators.
@@ -66,7 +67,7 @@ const Footer = () => {
                 >
                   <h4 className="font-semibold mb-4 text-white">{section.title}</h4>
                   <ul className="space-y-3 text-muted-foreground">
-                    {section.links.map((link, linkIndex) => (
+                    {section.links.map((link) => (
                       <motion.li 
                         key={link}
                         whileHover={{ x: 5 }}
