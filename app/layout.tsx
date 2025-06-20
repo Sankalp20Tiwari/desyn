@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Work_Sans } from "next/font/google";
 import { Comic_Neue } from "next/font/google";
 import "./globals.css";
 import { Room } from "./Room";
 
 
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
-  subsets: ["latin"],
-  weight:['400','600','700']
-});
 
 const comicNeue = Comic_Neue({
   variable: "--font-comic-neue",
