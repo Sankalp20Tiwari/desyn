@@ -1,7 +1,9 @@
 'use client';
 import { Button } from "@/components/ui/button";
+import { contactInfo } from "@/data/contact";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Clock, Send, Backpack, Home } from "lucide-react";
+import { Mail, Send, Home } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -13,37 +15,8 @@ const Contact = () => {
     company: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', company: '', message: '' });
-  };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      value: "hello@desyn.com",
-      description: "Drop us a line anytime"
-    },
-    {
-      icon: MapPin,
-      title: "Office",
-      value: "San Francisco, CA",
-      description: "Come visit our HQ"
-    },
-    {
-      icon: Clock,
-      title: "Response Time",
-      value: "< 24 hours",
-      description: "We're pretty quick"
-    }
-  ];
 
   return (
     <motion.section
@@ -86,12 +59,12 @@ const Contact = () => {
           </motion.div>
           
           <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-green-200 to-white bg-clip-text text-transparent">
-            Let's build something amazing
+            Let&apos;s build something amazing
           </h2>
           
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Have a question, feedback, or want to explore a partnership? 
-            We'd love to hear from you.
+            We&apos;d love to hear from you.
           </p>
         </motion.div>
 
@@ -115,11 +88,17 @@ const Contact = () => {
                 <div className="relative bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 group-hover:border-white/20 transition-all duration-300">
                   <div className="flex items-start gap-4">
                     <motion.div
-                      className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center flex-shrink-0"
+                      className="w-20 h-20 rounded-xl flex items-center justify-center flex-shrink-0"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <info.icon className="w-6 h-6 text-green-400" />
+                      <Image
+                        src={info.image}
+                        alt={info.title}
+                        width={32}
+                        height={32}
+                        className="w-10 h-10 object-contain"
+                      />
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-bold text-white mb-1">{info.title}</h3>
@@ -209,21 +188,10 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
                 <Button
                     type="submit"
-                  disabled={isSubmitting}
                   className="relative w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-semibold py-6 text-lg rounded-xl border-0 shadow-2xl shadow-green-500/25"
                 >
-                  {isSubmitting ? (
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                      className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full"
-                    />
-                  ) : (
-                    <>
-                      Send message
-                      <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                    </>
-                  )}
+                  <Send className="w-6 h-6 mr-2 inline-block" />
+                  Send Message
                 </Button>
               </motion.div>
             </div>
