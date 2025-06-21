@@ -18,6 +18,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
   );
 
   const [minimized, setMinimized] = useState(startMinimized);
+  const avatarIndex = useMemo(() => Math.floor(Math.random() * 30), []);
 
   const memoizedContent = useMemo(
     () => (
@@ -43,7 +44,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
           data-draggable={true}
         >
           <Image
-            src={`https://liveblocks.io/avatars/avatar-${Math.floor(Math.random() * 30)}.png`}
+            src={`https://liveblocks.io/avatars/avatar-${avatarIndex}.png`}
             alt="User avatar"
             width={28}
             height={28}
