@@ -2,9 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import { Shapes, Check } from 'lucide-react';
+import {  Check } from 'lucide-react';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { superChargeFont } from '@/fonts/fontsExport';
+import Image from 'next/image';
 
 const ShapeCreationSection = () => {
   const ref = useRef(null);
@@ -38,14 +40,14 @@ const ShapeCreationSection = () => {
               animate={isInView ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <Badge className="mb-6 bg-orange-500/20 text-orange-300 border-orange-500/30 p-2">
-                <Shapes className="w-4 h-4 mr-2" />
+              <Badge className="mb-6 text-xl bg-orange-500/20 text-orange-300 border-2 border-orange-500/30 px-4 py-2 hover:bg-orange-500/30 transition-colors">
+                🛠️
                 Creative Tools
               </Badge>
             </motion.div>
             
             <motion.h2 
-              className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white to-orange-200 bg-clip-text text-transparent p-2"
+              className={`text-6xl md:text-7xl font-bold mb-8 text-orange-500 p-2 ${superChargeFont.className}`}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -94,7 +96,9 @@ const ShapeCreationSection = () => {
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="aspect-video bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
-              <img 
+              <Image
+                width={800}
+                height={450}
                 src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=450&fit=crop" 
                 alt="Shape creation tools"
                 className="w-full h-full object-cover rounded-2xl"
