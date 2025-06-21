@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowRight,
-  Sparkles,
-  Wand,
   Star,
   ChevronDown,
+  WandIcon,
 } from 'lucide-react';
 import Image from 'next/image';
 import { features, stats, values } from '@/data/about';
 import { FloatingOrbStyle, MousePosition, VisibilityState } from '@/types/type';
+import AnimatedHeading from './AnimatedHeading';
+
 
 
 const AboutSection: React.FC = () => {
@@ -128,38 +129,38 @@ const AboutSection: React.FC = () => {
           }`}
           data-reveal="hero"
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 border border-indigo-500/20 backdrop-blur-sm mb-8 group hover:scale-105 transition-all duration-300">
-            <div className="relative">
-              <Sparkles className="w-5 h-5 text-indigo-400 animate-spin" style={{ animationDuration: '3s' }} />
-              <div className="absolute inset-0 bg-indigo-400 blur-md opacity-50 animate-pulse" />
-            </div>
-            <span className="text-sm font-semibold bg-gradient-to-r from-indigo-300 to-pink-300 bg-clip-text text-transparent">
-              About Desyn Platform
+
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 border-2 border-purple-500 backdrop-blur-sm mb-8 group hover:scale-105 transition-all duration-300">
+            <WandIcon className="w-5 h-5 text-yellow-400" />
+            <span className=" font-bold text-white">
+              About Desyn 
             </span>
-            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-400 animate-pulse" />
           </div>
           
           {/* Main Heading */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 relative ">
-            <span className="block bg-gradient-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent mb-4">
-              Crafting the
+          {/* <h1 className="text-4xl md:text-7xl lg:text-8xl font-black mb-8 ">
+            <span className={`block md:p-4 bg-gradient-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent pb-3 ${moogalatorFont.className}` }>
+              Crafting 
             </span>
-            <div className="relative inline-block">
-              <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className={`block md:p-4 bg-gradient-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent pb-3 ${moogalatorFont.className}` }>
+             the
+            </span>
+            <span className={`block md: p-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent pb-3 ${moogalatorFont.className}`}>
                 future
-              </span>
-              <div className="absolute -inset-2 bg-gradient-to-r from-indigo-600/20 via-purple-600/20 to-pink-600/20 blur-xl rounded-lg animate-pulse" />
-              <Wand className="absolute -top-4 -right-8 w-8 h-8 text-indigo-400 animate-bounce" style={{ animationDelay: '1s' }} />
-            </div>
-            <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent mt-4 pb-2">
-              of design
+            </span>
+            <span className={`block md:p-4  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent  pb-3 ${moogalatorFont.className}`}>
+              of
+            </span>
+            <span className={`block md:p-4 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-3 ${moogalatorFont.className}`}>
+              design
             </span>
           </h1>
-          
+           */}
+
+           <AnimatedHeading />
           {/* Subtitle */}
           <p className="text-xl md:text-2xl lg:text-3xl text-slate-300 max-w-5xl mx-auto leading-relaxed mb-12">
-            We're building more than just a design tool. We're creating a platform that{' '}
+            We&apos;re building more than just a design tool. We&apos;re creating a platform that{' '}
             <span className="text-transparent bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text font-semibold">
               empowers creativity
             </span>{' '}
@@ -216,7 +217,7 @@ const AboutSection: React.FC = () => {
                 </div>
                 
                 {/* Icon */}
-                <div className={`relative w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${stat.color} bg-opacity-20 flex items-center justify-center group-hover:rotate-12 transition-all duration-500`}>
+                <div className={`relative w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${stat.color} bg-opacity-20 flex items-center justify-center group-hover:scale-110 transition-all duration-500`}>
                   <stat.icon className="w-10 h-10 text-white" />
                   <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500`} />
                 </div>
