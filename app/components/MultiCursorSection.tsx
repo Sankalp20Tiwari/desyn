@@ -2,9 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import { Mouse, Check, Play, TextCursor, MousePointer2 } from 'lucide-react';
+import {  Check,  MousePointer2 } from 'lucide-react';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { superChargeFont } from '@/fonts/fontsExport';
+import Image from 'next/image';
+
 
 const MultiCursorSection = () => {
   const ref = useRef(null);
@@ -17,7 +20,7 @@ const MultiCursorSection = () => {
   ];
 
   return (
-    <section ref={ref} className="relative z-10 section-padding bg-gradient-to-r from-purple-500/5 to-pink-500/5">
+    <section ref={ref} className="relative z-10 section-padding bg-gradient-to-r from-purple-500/10 to-pink-500/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -30,14 +33,14 @@ const MultiCursorSection = () => {
               animate={isInView ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <Badge className="mb-6 bg-purple-500/20 text-purple-300 border-purple-500/30 p-2">
-                <Mouse className="w-4 h-4 mr-2" />
+              <Badge className="mb-6 text-xl  bg-purple-500/20 text-purple-300 border-2 border-purple-500 px-4 py-2 hover:bg-purple-500/30 transition-colors">
+                🖱️
                 Real-time Collaboration
               </Badge>
             </motion.div>
             
             <motion.h2 
-              className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent"
+              className={`text-6xl md:text-7xl font-bold mb-8 text-pink-500 ${superChargeFont.className}`}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -51,7 +54,7 @@ const MultiCursorSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              See everyone's cursor in real-time, chat instantly, and react with emojis. 
+              See everyone&apos;s cursor in real-time, chat instantly, and react with emojis. 
               Collaborate like never before with our advanced multiplayer features.
             </motion.p>
             
@@ -86,7 +89,9 @@ const MultiCursorSection = () => {
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
-              <img 
+              <Image
+                width={800}
+                height={450}
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=450&fit=crop" 
                 alt="Multi-cursor collaboration"
                 className="w-full h-full object-cover rounded-2xl"
@@ -102,7 +107,7 @@ const MultiCursorSection = () => {
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               >
                 <MousePointer2 
-                  className="w-6 h-6 text-red-500"
+                  className="w-6 h-6 text-red-500 fill-red-500"
                 />
               </motion.div>
               <motion.div
@@ -114,7 +119,7 @@ const MultiCursorSection = () => {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               >
                 <MousePointer2 
-                  className="w-6 h-6 text-blue-500"
+                  className="w-6 h-6 text-blue-500 fill-blue-500"
                 />
 
               </motion.div>
@@ -127,7 +132,7 @@ const MultiCursorSection = () => {
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
               >
                 <MousePointer2 
-                  className="w-6 h-6 text-green-500"
+                  className="w-6 h-6 text-green-500 fill-green-500"
                 />
               </motion.div>
             </div>
