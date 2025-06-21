@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import { MessageCircle, Check } from 'lucide-react';
+import {  Check } from 'lucide-react';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { superChargeFont } from '@/fonts/fontsExport';
+import Image from 'next/image';
 
 const CommentSection = () => {
   const ref = useRef(null);
@@ -32,7 +34,9 @@ const CommentSection = () => {
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="aspect-video bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
-              <img 
+              <Image
+                width={800}
+                height={450}
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop" 
                 alt="Comment system"
                 className="w-full h-full object-cover rounded-2xl"
@@ -82,14 +86,14 @@ const CommentSection = () => {
               animate={isInView ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <Badge className="mb-6 bg-cyan-500/20 text-cyan-300 border-cyan-500/30 p-2">
-                <MessageCircle className="w-4 h-4 mr-2" />
+              <Badge className="mb-6 text-xl bg-cyan-500/20 text-cyan-300 border-2  border-cyan-500 px-4 py-2 hover:bg-cyan-500/30 transition-colors">
+                📝
                 Contextual Feedback
               </Badge>
             </motion.div>
             
             <motion.h2 
-              className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent p-2"
+              className={`text-6xl md:text-7xl font-bold mb-8 text-cyan-500 p-2 ${superChargeFont.className}`}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
