@@ -1,16 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Zap, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { moogalatorFont } from '@/fonts/fontsExport';
 
 const CTASection = () => {
-  const floatingElements = [
-    { icon: Sparkles, delay: 0, x: -20, y: -30 },
-    { icon: Zap, delay: 0.2, x: 30, y: -20 },
-    { icon: Users, delay: 0.4, x: -15, y: 25 },
-  ];
 
   return (
     <motion.section
@@ -33,48 +28,6 @@ const CTASection = () => {
         </svg>
       </div>
 
-      {/* Floating Design Elements
-      {floatingElements.map((element, index) => (
-<motion.div
-  key={index}
-  className="absolute hidden lg:block"
-  style={{
-    left: `${20 + index * 25}%`,
-    top: `${30 + index * 15}%`,
-  }}
-  initial={{ opacity: 0, scale: 0 }}
-  whileInView={{ opacity: 0.6, scale: 1 }}
-  viewport={{ once: true }}
-  animate={{
-    y: [0, -10, 0],
-    x: [0, 5, 0],
-  }}
-  transition={{
-    // Initial entrance animation
-    duration: 0.8, 
-    delay: element.delay,
-    type: "spring",
-    stiffness: 100,
-    // Floating animation for y and x
-    y: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "loop",
-      ease: "easeInOut"
-    },
-    x: {
-      duration: 2.5,
-      repeat: Infinity,
-      repeatType: "loop",
-      ease: "easeInOut"
-    }
-  }}
->
-  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-    <element.icon className="w-8 h-8 text-purple-300" />
-  </div>
-</motion.div>
-      ))} */}
 
       {/* Glowing Orbs */}
       <motion.div
