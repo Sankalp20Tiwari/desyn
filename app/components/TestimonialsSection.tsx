@@ -1,12 +1,12 @@
 import React, { useRef,useMemo } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { Star, Quote, Sparkles, Award, Users, TrendingUp, ExternalLink } from 'lucide-react';
+import { Star, Quote,  Award, Users, TrendingUp, ExternalLink } from 'lucide-react';
 import {  AvatarType, CompanyLogo, Testimonial, TestimonialStatItem } from '@/types/type';
 import Image from 'next/image';
+import { moogalatorFont } from '@/fonts/fontsExport';
 
 const Avatar = React.memo<{ avatar: AvatarType; name: string; gradient: string; size?: 'sm' | 'md' | 'lg' }>(({ 
-  avatar, 
-  name, 
+  avatar,  
   gradient, 
   size = 'md' 
 }) => {
@@ -229,7 +229,7 @@ const TestimonialCard = React.memo<{
             transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
             className="text-lg text-white/90 leading-relaxed mb-8 flex-grow font-light italic group-hover:text-white transition-colors duration-300"
           >
-            "{testimonial.content}"
+            &quot;{testimonial.content}&quot;
           </motion.p>
 
           {/* Author Section with Enhanced Design */}
@@ -425,32 +425,28 @@ const TestimonialsSection: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500/15 to-pink-500/15 backdrop-blur-2xl border border-white/20 rounded-full px-6 py-3 mb-8 shadow-2xl"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500/15 to-pink-500/15 backdrop-blur-2xl border-2 border-purple-500 rounded-full px-4 py-2 mb-8 shadow-2xl"
           >
-            <Sparkles className="w-5 h-5 text-purple-400" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-semibold">
-              Loved by 100k+ creators
-            </span>
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            >
+            
               <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-            </motion.div>
+            <span className="text-white font-bold">
+              Loved by 50k+ creators
+            </span>
+
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight"
+            initial={{ opacity: 0, x: 500 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 2.3, delay: 0.3 ,staggerChildren: 0.1}}
+            className="text-4xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white">
+            <span className={`text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white ${moogalatorFont.className}`}>
               Trusted by the
             </span>
             <br />
             <motion.span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400"
+              className={`text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 ${moogalatorFont.className}`}
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
               }}
@@ -492,7 +488,7 @@ const TestimonialsSection: React.FC = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <StatsSection isInView={isInView} />
+        {/* <StatsSection isInView={isInView} /> */}
       </div>
     </section>
   );
