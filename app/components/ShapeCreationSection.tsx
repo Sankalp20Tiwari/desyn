@@ -18,13 +18,13 @@ const ShapeCreationSection = () => {
     "Advanced bezier curve tools"
   ];
 
-  const shapes = [
-    { className: "w-12 h-12 bg-orange-500/80 rounded-full", delay: 0 },
-    { className: "w-8 h-12 bg-red-500/80 rounded", delay: 0.5 },
-    { className: "w-10 h-10 bg-yellow-500/80 rounded-xl", delay: 1 },
-    { className: "w-6 h-16 bg-green-500/80 rounded-full", delay: 1.5 },
-    { className: "w-14 h-8 bg-blue-500/80 rounded-lg", delay: 2 }
-  ];
+  // const shapes = [
+  //   { className: "w-12 h-12 bg-orange-500/80 rounded-full", delay: 0 },
+  //   { className: "w-8 h-12 bg-red-500/80 rounded", delay: 0.5 },
+  //   { className: "w-10 h-10 bg-yellow-500/80 rounded-xl", delay: 1 },
+  //   { className: "w-6 h-16 bg-green-500/80 rounded-full", delay: 1.5 },
+  //   { className: "w-14 h-8 bg-blue-500/80 rounded-lg", delay: 2 }
+  // ];
 
   return (
     <section ref={ref} className="relative z-10 section-padding bg-gradient-to-r from-orange-500/5 to-red-500/5">
