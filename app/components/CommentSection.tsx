@@ -27,17 +27,17 @@ const CommentSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
-            className="order-2 lg:order-1 glass-morphism  rounded-3xl"
+            className="order-2 lg:order-1   rounded-3xl"
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             whileHover={{ scale: 1.02, y: -5 }}
           >
-            <div className="aspect-video bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
+            <div className="border-2 border-cyan-500 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-2xl shadow-cyan-500">
               <Image
                 width={800}
                 height={450}
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop" 
+                src="/comment.png" 
                 alt="Comment system"
                 className="w-full h-full object-cover rounded-2xl"
               />

@@ -88,11 +88,11 @@ const MultiCursorSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             whileHover={{ scale: 1.02, y: -5 }}
           >
-            <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
+            <div className=" rounded-2xl flex items-center justify-center relative overflow-hidden border-2 border-purple-500 shadow-2xl shadow-purple-500">
               <Image
                 width={800}
                 height={450}
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=450&fit=crop" 
+                src="/multicursor.png" 
                 alt="Multi-cursor collaboration"
                 className="w-full h-full object-cover rounded-2xl"
               />

@@ -31,8 +31,9 @@ const EmojiReactionsSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             whileHover={{ scale: 1.02, y: -5 }}
           >
-
+            <div className=" border-2 border-blue-500 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-2xl shadow-blue-500">
             <img src="https://www.cambridge.org/elt/blog/wp-content/uploads/2021/07/GettyImages-884378360.jpg" alt="" className='w-full h-full rounded-3xl' loading='lazy'/>
+            </div>
 
             <motion.div 
               className="mt-6 flex justify-center space-x-4"

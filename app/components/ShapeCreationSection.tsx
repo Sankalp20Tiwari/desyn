@@ -95,17 +95,17 @@ const ShapeCreationSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             whileHover={{ scale: 1.02, y: -5 }}
           >
-            <div className="aspect-video bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
+            <div className="aspect-video   rounded-2xl flex items-center justify-center relative overflow-hidden shadow-2xl shadow-orange-500 border-2 border-orange-500">
               <Image
                 width={800}
                 height={450}
-                src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=450&fit=crop" 
+                src="/shappes.png" 
                 alt="Shape creation tools"
                 className="w-full h-full object-cover rounded-2xl"
               />
               
               {/* Animated shapes */}
-              {shapes.map((shape, index) => (
+              {/* {shapes.map((shape, index) => (
                 <motion.div
                   key={index}
                   className={`absolute ${shape.className}`}
@@ -126,26 +126,26 @@ const ShapeCreationSection = () => {
                   }}
                   whileHover={{ scale: 1.3 }}
                 />
-              ))}
+              ))} */}
               
               {/* Drawing path animation */}
-              <motion.svg
-                className="absolute inset-0 w-full h-full"
-                initial={{ pathLength: 0 }}
-                animate={isInView ? { pathLength: 1 } : {}}
-                transition={{ duration: 3, delay: 1 }}
-              >
-                <motion.path
-                  d="M 100 200 Q 200 100 300 200 T 500 200"
-                  stroke="rgba(255, 255, 255, 0.3)"
-                  strokeWidth="3"
-                  fill="transparent"
-                  strokeLinecap="round"
+                {/* <motion.svg
+                  className="absolute inset-0 w-full h-full"
                   initial={{ pathLength: 0 }}
                   animate={isInView ? { pathLength: 1 } : {}}
                   transition={{ duration: 3, delay: 1 }}
-                />
-              </motion.svg>
+                >
+                  <motion.path
+                    d="M 100 200 Q 200 100 300 200 T 500 200"
+                    stroke="rgba(255, 255, 255, 0.3)"
+                    strokeWidth="3"
+                    fill="transparent"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={isInView ? { pathLength: 1 } : {}}
+                    transition={{ duration: 3, delay: 1 }}
+                  />
+                </motion.svg> */}
             </div>
           </motion.div>
         </div>
