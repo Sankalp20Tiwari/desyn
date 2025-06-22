@@ -96,7 +96,7 @@ const RenderSelect = ({
           : fontWeight
     }
   >
-    <SelectTrigger className='no-ring w-full rounded-sm border border-primary-grey-200'>
+    <SelectTrigger className='no-ring w-full rounded-sm border border-primary-grey-200 '>
       <SelectValue
         placeholder={
           config.property === "fontFamily"
@@ -107,7 +107,7 @@ const RenderSelect = ({
         }
       />
     </SelectTrigger>
-    <SelectContent className='border-primary-grey-200 bg-primary-black text-primary-grey-300'>
+    <SelectContent className='border-primary-grey-200 bg-black text-primary-grey-300'>
       {config.options.map((option) => (
         <SelectItem
           key={option.value}
