@@ -7,9 +7,7 @@
 
 
 * {
-  font-family:
-    work sans,
-    sans-serif;
+  font-family: var(--font-work-sans), sans-serif;
 }
 
 body{
