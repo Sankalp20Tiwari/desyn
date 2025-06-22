@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { moogalatorFont } from '@/fonts/fontsExport';
 
 const directions = [
-  { x: -100, y: 0 },   // Left
-  { x: 100, y: 0 },    // Right
+  { x: -10, y: 100 },   // Left
+  { x: 10, y: 0 },    // Right
   { x: 0, y: -100 },   // Top
   { x: 0, y: 100 },    // Bottom
-  { x: -100, y: -100 } // Diagonal
+  { x: -20, y: -100 } // Diagonal
 ];
 
 const words = [
@@ -21,7 +21,7 @@ const words = [
 
 export default function AnimatedHeading() {
   return (
-    <h1 className="text-4xl md:text-7xl lg:text-8xl font-black mb-8">
+    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-8">
       {words.map((word, i) => (
         <motion.span
           key={word.text}

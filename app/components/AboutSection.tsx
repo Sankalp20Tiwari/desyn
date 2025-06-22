@@ -121,7 +121,7 @@ const AboutSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-2 py-20">
         {/* Hero Section */}
         <div 
           className={`text-center mb-32 transition-all duration-1000 transform ${
@@ -137,27 +137,11 @@ const AboutSection: React.FC = () => {
             </span>
           </div>
           
-          {/* Main Heading */}
-          {/* <h1 className="text-4xl md:text-7xl lg:text-8xl font-black mb-8 ">
-            <span className={`block md:p-4 bg-gradient-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent pb-3 ${moogalatorFont.className}` }>
-              Crafting 
-            </span>
-            <span className={`block md:p-4 bg-gradient-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent pb-3 ${moogalatorFont.className}` }>
-             the
-            </span>
-            <span className={`block md: p-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent pb-3 ${moogalatorFont.className}`}>
-                future
-            </span>
-            <span className={`block md:p-4  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent  pb-3 ${moogalatorFont.className}`}>
-              of
-            </span>
-            <span className={`block md:p-4 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-3 ${moogalatorFont.className}`}>
-              design
-            </span>
-          </h1>
-           */}
 
-           <AnimatedHeading />
+          <div className='w-full h-full  mb-8'>
+
+           < AnimatedHeading />
+          </div>
           {/* Subtitle */}
           <p className="text-xl md:text-2xl lg:text-3xl text-slate-300 max-w-5xl mx-auto leading-relaxed mb-12">
             We&apos;re building more than just a design tool. We&apos;re creating a platform that{' '}
