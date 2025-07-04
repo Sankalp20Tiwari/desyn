@@ -8,7 +8,7 @@ import { Crown, Check } from 'lucide-react';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { pricingPlans } from '@/data/pricing';
-import { moogalatorFont } from '@/fonts/fontsExport';
+import {  superChargeFont } from '@/fonts/fontsExport';
 
 const PricingSection = () => {
   const ref = useRef(null);
@@ -35,7 +35,7 @@ const PricingSection = () => {
           </div>
           
           <motion.h2 
-            className={`text-4xl p-2 leading-tight md:text-7xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}
+            className={`text-4xl md:text-9xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -44,7 +44,7 @@ const PricingSection = () => {
             
           </motion.h2>
           <motion.h2 
-            className={`text-4xl p-2 leading-tight md:text-7xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}
+            className={`text-4xl md:text-9xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -54,12 +54,12 @@ const PricingSection = () => {
           </motion.h2>
 
           <motion.h2 
-            className={`text-5xl p-2 md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}
+            className={`text-5xl p-2 md:text-9xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span  className={`text-5xl p-2  md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-200 via-teal-600 to-teal-200 bg-clip-text text-transparent ${moogalatorFont.className}`}> plan </span>
+            <span  className={`text-5xl p-2  md:text-9xl font-bold  bg-gradient-to-r from-teal-200 via-teal-600 to-teal-200 bg-clip-text text-transparent ${superChargeFont.className}`}> plan </span>
           </motion.h2>
           
           

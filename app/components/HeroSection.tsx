@@ -15,7 +15,7 @@ import ParticlesField from './ParticlesField';
 import InteractiveElement from './InteractiveElement';
 import FloatingShape from './FloatingShape';
 import CustomCursor from './CustomCursor';
-import { moogalatorFont } from '@/fonts/fontsExport';
+import {  superChargeFont } from '@/fonts/fontsExport';
 
 
 
@@ -151,7 +151,7 @@ const HeroSection: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <span className={`text-3xl sm:text-7xl bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}>
+                <span className={`text-3xl sm:text-9xl px-8 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}>
                   Design
                 </span>
               </motion.div>
@@ -162,7 +162,7 @@ const HeroSection: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.span 
-                  className={`bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent uppercase text-5xl md:text-8xl lg:text-9xl ${moogalatorFont.className}` }
+                  className={`bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent uppercase text-5xl md:text-8xl lg:text-9xl px-8 ${superChargeFont.className}` }
                   animate={{ 
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                   }}
@@ -205,7 +205,7 @@ const HeroSection: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <span className={`text-white relative ${moogalatorFont.className} text-3xl sm:text-7xl`}>
+                <span className={`text-white relative ${superChargeFont.className} text-3xl sm:text-9xl `}>
                   together
                   <motion.div
                     className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"

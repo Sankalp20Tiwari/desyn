@@ -1,4 +1,4 @@
-import { moogalatorFont, superChargeFont } from '@/fonts/fontsExport';
+import {  superChargeFont } from '@/fonts/fontsExport';
 import { useState, useEffect } from 'react';
 
 const Loader = () => {
@@ -70,7 +70,7 @@ const Loader = () => {
 
 
         <div className="flex items-center space-x-2">
-          <h1 className={`text-5xl font-bold  ${moogalatorFont.className}`}>
+          <h1 className={`text-5xl font-bold  ${superChargeFont.className}`}>
             Desyn
           </h1>
           <div className="w-0.5 h-8 bg-blue-500 animate-pulse"></div>

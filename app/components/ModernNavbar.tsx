@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { navItems } from '@/data/navbar';
-import { moogalatorFont } from '@/fonts/fontsExport';
+import {  superChargeFont } from '@/fonts/fontsExport';
 
 const ModernNavbar:React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +49,7 @@ const ModernNavbar:React.FC = () => {
                 height={32}
               />
             </motion.div>
-            <span className={`text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent ${moogalatorFont.className}`}>
+            <span className={`text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent pr-4 ${superChargeFont.className}`}>
               Desyn
             </span>
           </motion.div>

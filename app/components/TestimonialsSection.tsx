@@ -3,7 +3,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Star, Quote,  Award, Users, TrendingUp, ExternalLink } from 'lucide-react';
 import {  AvatarType, CompanyLogo, Testimonial, TestimonialStatItem } from '@/types/type';
 import Image from 'next/image';
-import { moogalatorFont } from '@/fonts/fontsExport';
+import {  superChargeFont } from '@/fonts/fontsExport';
 
 const Avatar = React.memo<{ avatar: AvatarType; name: string; gradient: string; size?: 'sm' | 'md' | 'lg' }>(({ 
   avatar,  
@@ -441,12 +441,12 @@ const TestimonialsSection: React.FC = () => {
             transition={{ duration: 2.3, delay: 0.3 ,staggerChildren: 0.1}}
             className="text-4xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight"
           >
-            <span className={`text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white ${moogalatorFont.className}`}>
+            <span className={`text-transparent pr-8 bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white ${superChargeFont.className}`}>
               Trusted by the
             </span>
             <br />
             <motion.span
-              className={`text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 ${moogalatorFont.className}`}
+              className={`text-transparent pr-8 bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 ${superChargeFont.className}`}
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
               }}

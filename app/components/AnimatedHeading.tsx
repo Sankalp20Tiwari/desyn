@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion';
-import { moogalatorFont } from '@/fonts/fontsExport';
+import { superChargeFont } from '@/fonts/fontsExport';
 
 const directions = [
   { x: -10, y: 100 },   // Left
@@ -21,7 +21,7 @@ const words = [
 
 export default function AnimatedHeading() {
   return (
-    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-8">
+    <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black ">
       {words.map((word, i) => (
         <motion.span
           key={word.text}
@@ -29,7 +29,7 @@ export default function AnimatedHeading() {
           whileInView={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.8, delay: i * 0.2 }}
           viewport={{ once: true, amount: 0.8 }}
-          className={`block md:p-4 ${word.gradient} bg-clip-text text-transparent pb-3 ${moogalatorFont.className}`}
+          className={`block  ${word.gradient} bg-clip-text text-transparent  ${superChargeFont.className}`}
         >
           {word.text}
         </motion.span>

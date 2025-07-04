@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { Globe, Palette, Shield } from 'lucide-react';
 import Image from 'next/image';
-import { moogalatorFont } from '@/fonts/fontsExport';
+import { superChargeFont } from '@/fonts/fontsExport';
 
 const Footer = () => {
   return (
@@ -35,7 +35,7 @@ const Footer = () => {
                       className="object-contain" 
                     />
                   </motion.div>
-                  <span className={`text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent ${moogalatorFont.className}`}>Desyn</span>
+                  <span className={`text-2xl pr-4 font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent ${superChargeFont.className}`}>Desyn</span>
                 </div>
                 <p className="text-muted-foreground mb-6">
                   The next-generation collaborative design platform for modern creators.

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { moogalatorFont } from '@/fonts/fontsExport';
+import {  superChargeFont } from '@/fonts/fontsExport';
 
 const CTASection = () => {
 
@@ -76,13 +76,13 @@ const CTASection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <span className={`block p-4  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${moogalatorFont.className}`}>
+          <span className={`block   bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent ${superChargeFont.className}`}>
             Imagine
           </span>
-          <span className={`block p-4 text-white mt-4 ${moogalatorFont.className}`}>
+          <span className={`block  text-white ${superChargeFont.className}`}>
             create 
           </span>
-          <span className={`block p-4  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent mt-4 ${moogalatorFont.className}`}>
+          <span className={`block   bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent  ${superChargeFont.className}`}>
             Inspire
           </span>
         </motion.h2>
