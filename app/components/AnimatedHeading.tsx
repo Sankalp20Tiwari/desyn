@@ -21,7 +21,7 @@ const words = [
 
 export default function AnimatedHeading() {
   return (
-    <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black ">
+    <h1 className="text-6xl md:text-8xl lg:text-9xl font-black ">
       {words.map((word, i) => (
         <motion.span
           key={word.text}

@@ -71,7 +71,7 @@ const EmojiReactionsSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Instant Emoji Reactions
+              Instant Emojis Reaction
             </motion.h2>
             
             <motion.p 
