@@ -35,7 +35,7 @@ const PricingSection = () => {
           </div>
           
           <motion.h2 
-            className={`text-4xl md:text-9xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
+            className={`text-6xl md:text-9xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -44,7 +44,7 @@ const PricingSection = () => {
             
           </motion.h2>
           <motion.h2 
-            className={`text-4xl md:text-9xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
+            className={`text-6xl md:text-9xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -54,12 +54,12 @@ const PricingSection = () => {
           </motion.h2>
 
           <motion.h2 
-            className={`text-5xl p-2 md:text-9xl font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
+            className={` font-bold  bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span  className={`text-5xl p-2  md:text-9xl font-bold  bg-gradient-to-r from-teal-200 via-teal-600 to-teal-200 bg-clip-text text-transparent ${superChargeFont.className}`}> plan </span>
+            <span  className={`text-7xl p-2  md:text-9xl font-bold  bg-gradient-to-r from-teal-200 via-teal-600 to-teal-200 bg-clip-text text-transparent ${superChargeFont.className}`}> plan </span>
           </motion.h2>
           
           

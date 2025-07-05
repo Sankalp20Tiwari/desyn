@@ -151,7 +151,7 @@ const HeroSection: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <span className={`text-3xl sm:text-9xl px-8 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}>
+                <span className={`text-5xl sm:text-9xl px-8 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent ${superChargeFont.className}`}>
                   Design
                 </span>
               </motion.div>
@@ -162,7 +162,7 @@ const HeroSection: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.span 
-                  className={`bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent uppercase text-5xl md:text-8xl lg:text-9xl px-8 ${superChargeFont.className}` }
+                  className={`bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent uppercase text-6xl md:text-8xl lg:text-9xl px-8 ${superChargeFont.className}` }
                   animate={{ 
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                   }}
@@ -205,7 +205,7 @@ const HeroSection: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <span className={`text-white relative ${superChargeFont.className} text-3xl sm:text-9xl `}>
+                <span className={`text-white relative ${superChargeFont.className} text-5xl sm:text-9xl `}>
                   together
                   <motion.div
                     className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"
@@ -219,7 +219,7 @@ const HeroSection: React.FC = () => {
           </motion.div>
 
           <motion.p 
-            className="text-xl md:text-2xl text-gray-300 mb-1 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-300 mb-12 sm:mb-1 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}

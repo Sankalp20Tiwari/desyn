@@ -439,21 +439,36 @@ const TestimonialsSection: React.FC = () => {
             initial={{ opacity: 0, x: 500 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 2.3, delay: 0.3 ,staggerChildren: 0.1}}
-            className="text-4xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight"
+            className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight "
           >
-            <span className={`text-transparent pr-8 bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white ${superChargeFont.className}`}>
-              Trusted by the
+            <div className="flex flex-col sm:flex-row items-center justify-center">
+             <span className={`text-transparent pr-4 bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white ${superChargeFont.className}`}>
+              Trusted 
             </span>
-            <br />
+            <span className={`text-transparent pr-4 bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white ${superChargeFont.className}`}>
+              by the
+            </span>
+            </div> 
+            <div className='flex flex-col sm:flex-row items-center justify-center'>
             <motion.span
-              className={`text-transparent pr-8 bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 ${superChargeFont.className}`}
+              className={`text-transparent pr-4  bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 ${superChargeFont.className}`}
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
               }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             >
-              best creators
+              best
             </motion.span>
+            <motion.span
+              className={`text-transparent pr-4  bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 ${superChargeFont.className}`}
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+              }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            >
+             creators
+            </motion.span>
+            </div>
           </motion.h2>
 
           <motion.p
