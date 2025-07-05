@@ -5,7 +5,15 @@ import { motion } from "framer-motion";
 import { Mail, Send, Home } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import CustomCursor from "../components/CustomCursor";
+
+interface MousePosition {
+  x: number;
+  y: number;
+  relativeX?: number;
+  relativeY?: number;
+}
 
 
 const Contact = () => {
@@ -15,10 +23,31 @@ const Contact = () => {
     company: '',
     message: ''
   });
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+      const handleMouseMove = (e: MouseEvent) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+        
+        const rect = containerRef.current?.getBoundingClientRect();
+        if (rect) {
+          const relativeX = (e.clientX - rect.left - rect.width / 2) / 20;
+          const relativeY = (e.clientY - rect.top - rect.height / 2) / 20;
+          setMousePosition(prev => ({ ...prev, relativeX, relativeY }));
+        }
+      };
+  
+      window.addEventListener('mousemove', handleMouseMove);
+      return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
 
 
 
   return (
+    <>
+    <CustomCursor mousePosition={mousePosition} isHovering={isHovering} />
     <motion.section
       className="relative section-padding overflow-hidden"
       initial={{ opacity: 0 }}
@@ -27,7 +56,10 @@ const Contact = () => {
       transition={{ duration: 1 }}
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 opacity-20">
+      <div 
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 right-20 w-72 h-72 bg-gradient-to-r from-green-500/30 to-teal-500/30 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 left-20 w-56 h-56 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
       </div>
@@ -199,6 +231,7 @@ const Contact = () => {
         </div>
       </div>
     </motion.section>
+    </>
   );
 };
 
