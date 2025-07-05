@@ -71,20 +71,31 @@ const CTASection = () => {
         {/* Main Headline */}
         <motion.h2
           className="text-4xl md:text-7xl lg:text-8xl font-bold mb-8 leading-none"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <motion.span 
+          initial={{ opacity: 0, x:500 }}
+          whileInView={{ opacity: 1, x:0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          <span className={`block   bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent ${superChargeFont.className}`}>
+          className={`block   bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent ${superChargeFont.className}`}>
             Imagine
-          </span>
-          <span className={`block  text-white ${superChargeFont.className}`}>
+          </motion.span>
+          <motion.span 
+          initial={{ opacity: 0, y:-30 }}
+          whileInView={{ opacity: 1, y:0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className={`block  text-white ${superChargeFont.className}`}>
             create 
-          </span>
-          <span className={`block   bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent  ${superChargeFont.className}`}>
+          </motion.span>
+          <motion.span 
+          initial={{ opacity: 0, x:-500 }}
+          whileInView={{ opacity: 1, x:0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className={`block   bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent  ${superChargeFont.className}`}>
             Inspire
-          </span>
+          </motion.span>
         </motion.h2>
 
         {/* Subheadline */}
