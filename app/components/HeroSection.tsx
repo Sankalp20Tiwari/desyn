@@ -124,22 +124,9 @@ const HeroSection: React.FC = () => {
           style={{ y: y1 }}
         >
 
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={isInView ? { scale: 1, rotate: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              <div className="inline-flex items-center mb-8 px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-md border-2 border-purple-500 rounded-full">
-                  <Sparkles className="w-5 h-5 mr-3 text-purple-400 fill-purple-600 animate-pulse" />
-                <span className="text-white font-medium">The future of collaborative design</span>
-                  <Zap className="w-5 h-5 ml-3 text-pink-400 fill-pink-500" />
-              </div>
-            </motion.div>
 
 
-          <motion.div className="mb-8">
+          <motion.div className="mb-8 mt-12">
             <motion.h1 
               className="text-6xl md:text-8xl font-black leading-tight"
               initial={{ opacity: 0, y: 50 }}
@@ -201,7 +188,7 @@ const HeroSection: React.FC = () => {
               </motion.div>
               
               <motion.div
-                className="block"
+                className="block mt-10"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
