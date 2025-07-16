@@ -2,8 +2,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform,  useInView, MotionValue } from 'framer-motion';
 import { 
-  ArrowRight, Play, Sparkles, PenTool, 
-  Layers, Zap,  Star, Circle, Square, Triangle, Hexagon,
+  ArrowRight, Play,  PenTool, 
+  Layers,   Star, Circle, Square, Triangle, Hexagon,
    Palette, Type,
   LineChart,
   Shapes,
@@ -67,6 +67,13 @@ const HeroSection: React.FC = () => {
         style={{ opacity }}
       >
 
+      <div 
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 right-20 w-72 h-72 bg-gradient-to-r from-green-500/30 to-teal-500/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 left-20 w-56 h-56 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
+      </div>
       <GridBackground />
       <ParticlesField />
       
