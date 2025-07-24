@@ -28,7 +28,7 @@ const Index = () => {
   return (
     <AnimatePresence>
       <motion.div 
-        className="min-h-screen bg-background text-foreground overflow-hidden"
+        className="min-h-screen bg-background text-foreground overflow-hidden custom-cursor"
         initial="initial"
         animate="in"
         exit="out"

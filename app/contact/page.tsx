@@ -49,7 +49,7 @@ const Contact = () => {
     <>
     <CustomCursor mousePosition={mousePosition} isHovering={isHovering} />
     <motion.section
-      className="relative section-padding overflow-hidden"
+      className="relative section-padding overflow-hidden custom-cursor"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
