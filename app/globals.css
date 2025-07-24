@@ -86,7 +86,6 @@ body{
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    cursor:none;
   }
 
   html {
@@ -222,4 +221,8 @@ body{
 
 .card-icon {
   @apply transition-transform duration-300;
+}
+
+.custom-cursor {
+  cursor: none;
 }
